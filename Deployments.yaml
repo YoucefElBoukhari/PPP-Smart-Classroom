@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smart-class-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: smart-class-deployment
+  template:
+    metadata:
+      labels:
+        app: smart-class-deployment
+    spec:
+      containers:
+        - name: smart-class-container
+          image: elboukhariyoucef/smart-class:1.0.1
+          ports:
+            - containerPort: 8001
+
